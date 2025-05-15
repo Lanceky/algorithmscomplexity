@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Algorithm Complexity Guide</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+
+<body>
+    
+
+    <header class="header">
+        
+        <div class="container">
+            <h1><i class="fas fa-project-diagram"></i> Algorithm Complexity Guide</h1>
+            <p>Master time and space complexity with real-world analogies</p>
+        </div>
+    </header>
+
+    
+
+    <main class="container content">
+        <section id="time-complexity" class="card">
+            <h2><i class="fas fa-stopwatch"></i> Part 1: Time Complexity – Why Speed Matters</h2>
+
+            <div class="analogy">
+                <h3><i class="fas fa-coffee"></i> Real-World Analogy: The Coffee Shop Problem</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order Style</th>
+                                <th>Time Taken</th>
+                                <th>Big-O Equivalent</th>
+                                <th>Why?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Single barista, one order at a time</td>
+                                <td>Long wait</td>
+                                <td><code>O(n)</code></td>
+                                <td>Each customer takes fixed time; 10 customers = 10x wait</td>
+                            </tr>
+                            <tr>
+                                <td>Self-service kiosks</td>
+                                <td>Faster</td>
+                                <td><code>O(log n)</code></td>
+                                <td>Line moves quickly like binary search</td>
+                            </tr>
+                            <tr>
+                                <td>Pre-made drinks</td>
+                                <td>Instant</td>
+                                <td><code>O(1)</code></td>
+                                <td>Ready immediately like hash table lookup</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="definitions">
+                <h3><i class="fas fa-book"></i> Formal Definitions</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Notation</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                                <th>Speed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>O(1)</code></td>
+                                <td>Constant time</td>
+                                <td>Array index lookup</td>
+                                <td><span class="speed fast">⚡ Fastest</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>O(log n)</code></td>
+                                <td>Logarithmic time</td>
+                                <td>Binary search</td>
+                                <td><span class="speed fast">🏎️ Fast</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>O(n)</code></td>
+                                <td>Linear time</td>
+                                <td>Simple loop</td>
+                                <td><span class="speed medium">🚶 Steady</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>O(n²)</code></td>
+                                <td>Quadratic time</td>
+                                <td>Nested loops</td>
+                                <td><span class="speed slow">🐢 Slow</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>O(2ⁿ)</code></td>
+                                <td>Exponential time</td>
+                                <td>Brute-force</td>
+                                <td><span class="speed very-slow">❌ Unusable</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>O(n!)</code></td>
+                                <td>Factorial time</td>
+                                <td>TSP naive</td>
+                                <td><span class="speed very-slow">💥 Disaster</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="interactive">
+                <h3><i class="fas fa-question-circle"></i> Interactive Question</h3>
+                <p>Which is worse for 1,000 inputs: <code>O(n³)</code> or <code>O(2ⁿ)</code>?</p>
+                <button class="btn" onclick="alert('Answer: O(2ⁿ) grows far faster!')">Reveal Answer</button>
+            </div>
+        </section>
+
+        <section id="space-complexity" class="card">
+            <h2><i class="fas fa-memory"></i> Part 2: Space Complexity – Memory Matters</h2>
+
+            <div class="analogy">
+                <h3><i class="fas fa-boxes"></i> Real-World Analogy: Moving Houses</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Storage Method</th>
+                                <th>Space Used</th>
+                                <th>Big-O Equivalent</th>
+                                <th>Why?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Backpack</td>
+                                <td>Minimal</td>
+                                <td><code>O(1)</code></td>
+                                <td>Constant space like a single variable</td>
+                            </tr>
+                            <tr>
+                                <td>Moving truck</td>
+                                <td>Proportional</td>
+                                <td><code>O(n)</code></td>
+                                <td>More items = more space like an array</td>
+                            </tr>
+                            <tr>
+                                <td>Warehouse</td>
+                                <td>Explodes</td>
+                                <td><code>O(n²)</code></td>
+                                <td>Storing every pair like a 2D matrix</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="definitions">
+                <h3><i class="fas fa-book"></i> Formal Definitions</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Notation</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>O(1)</code></td>
+                                <td>Constant space</td>
+                                <td>Single variable</td>
+                            </tr>
+                            <tr>
+                                <td><code>O(n)</code></td>
+                                <td>Linear space</td>
+                                <td>Dynamic array</td>
+                            </tr>
+                            <tr>
+                                <td><code>O(n²)</code></td>
+                                <td>Quadratic space</td>
+                                <td>2D matrix</td>
+                            </tr>
+                            <tr>
+                                <td><code>O(log n)</code></td>
+                                <td>Logarithmic space</td>
+                                <td>Recursive binary search</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="interactive">
+                <h3><i class="fas fa-question-circle"></i> Interactive Challenge</h3>
+                <p>You're storing every 3D pixel in a game world. Which complexity applies?</p>
+                <button class="btn" onclick="alert('Answer: O(n³) – cubic space!')">Reveal Answer</button>
+            </div>
+        </section>
+
+        <section id="tradeoffs" class="card">
+            <h2><i class="fas fa-balance-scale"></i> Part 3: Time-Space Tradeoffs</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th>Time</th>
+                            <th>Space</th>
+                            <th>Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Merge Sort</td>
+                            <td><code>O(n log n)</code></td>
+                            <td><code>O(n)</code></td>
+                            <td>Fast but memory-heavy</td>
+                        </tr>
+                        <tr>
+                            <td>Bubble Sort</td>
+                            <td><code>O(n²)</code></td>
+                            <td><code>O(1)</code></td>
+                            <td>Slow but minimal memory</td>
+                        </tr>
+                        <tr>
+                            <td>Hash Table</td>
+                            <td><code>O(1)*</code></td>
+                            <td><code>O(n)</code></td>
+                            <td>Fast lookups, extra space</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pro-tip">
+                <h3><i class="fas fa-lightbulb"></i> Pro Tip</h3>
+                <p>The <code>*</code> on hash tables means <em>amortized</em> O(1) time - they occasionally resize (O(n)).</p>
+            </div>
+        </section>
+
+        <section id="takeaways" class="card">
+            <h2><i class="fas fa-key"></i> Part 4: Key Takeaways</h2>
+
+            <div class="takeaways">
+                <div class="takeaway">
+                    <h3><i class="fas fa-stopwatch"></i> Time Complexity</h3>
+                    <ul>
+                        <li>Measures <strong>algorithm speed</strong></li>
+                        <li>Avoid <code>O(n!)</code> and <code>O(2ⁿ)</code> in production</li>
+                    </ul>
+                </div>
+
+                <div class="takeaway">
+                    <h3><i class="fas fa-memory"></i> Space Complexity</h3>
+                    <ul>
+                        <li>Measures <strong>memory usage</strong></li>
+                        <li>Recursion can cause stack overflows</li>
+                    </ul>
+                </div>
+
+                <div class="takeaway">
+                    <h3><i class="fas fa-exchange-alt"></i> Tradeoffs</h3>
+                    <ul>
+                        <li>Often choose between <strong>speed vs memory</strong></li>
+                        <li>Optimize based on your use case</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="interactive">
+                <h3><i class="fas fa-question-circle"></i> Final Quiz</h3>
+                <p>Which is better for a contacts app: <code>O(n)</code> search with <code>O(1)</code> space, or <code>O(log n)</code> search with <code>O(n)</code> space?</p>
+                <button class="btn" onclick="alert('Answer: O(log n) + O(n) – users want fast searches!')">Reveal Answer</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2023 Algorithm Complexity Guide | Created with <i class="fas fa-heart"></i> for developers</p>
+        </div>
+    </footer>
+
+</body>
+</html>
